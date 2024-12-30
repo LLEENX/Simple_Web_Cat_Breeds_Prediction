@@ -1,0 +1,105 @@
+/* Reset dasar */
+body {
+    margin: 0;
+    font-family: 'Roboto', Arial, sans-serif; /* Menggunakan Google Font */
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Kontainer utama */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Bagian konten teks */
+.content {
+    max-width: 500px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #007BFF;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.author {
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Formulir */
+.form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+input[type="file"] {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.image {
+    max-width: 500px;
+    text-align: center;
+}
+
+.image img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .content, .image {
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}

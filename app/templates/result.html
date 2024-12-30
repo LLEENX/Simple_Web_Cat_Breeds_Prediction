@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="../static/style/stylesR.css">
+
+     <!-- Style Google Fonts -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <div class="content">
+        {% if breed_name == "Unknown" %}
+            <h1 class="Judul">Gambar Tidak Dikenali</h1>
+            <p>Gambar yang Anda unggah tidak dikenali sebagai salah satu ras kucing. Silakan coba gambar lain.</p>
+        {% else %}
+            <h1 class="Judul">Hasil Prediksi Ras Kucing</h1>
+            <h1 class="Ras">{{ breed_name }}</h1>
+            <img src="{{ url_for('static', filename=image_url) }}" alt="{{ breed_name }}" width="200">
+            <p>{{ description }}</p>
+        {% endif %}
+        <br>
+        <a href="/">Coba Gambar Lain</a>
+    </div>
+</div>
+
+</body>
+</html>

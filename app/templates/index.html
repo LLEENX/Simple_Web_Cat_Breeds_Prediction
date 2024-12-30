@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Breed Prediction</title>
+    <!-- Menghubungkan CSS -->
+    <link rel="stylesheet" href="../static/style/styles.css">
+
+    <!-- Menggunakan Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <div class="content">
+        <h1>Cat Breed Prediction</h1>
+        <p>Prediksi ras kucing dengan akurasi tinggi untuk 5 jenis ras populer: Bengal, Persia, Birman, British Shorthair, dan Ragdoll.</p>
+        <p class="author">By Rifal Ariya Yusuftrian</p>
+        <div class="form">
+            <form action="/predict" method="POST" enctype="multipart/form-data">
+                <input type="file" name="image" accept="image/*" required>
+                <button type="submit">Predict Breed</button>
+            </form>
+        </div>
+    </div>
+    <div class="image">
+        <img src="{{ url_for('static', filename='image/catremovebg.png') }}" alt="Cat Image">
+    </div>
+</div>
+
+{% if breed_name %}
+<div class="result">
+    <h2>Predicted Breed: {{ breed_name }}</h2>
+    <p>Description: {{ description }}</p>
+    <img src="{{ url_for('static', filename='uploads/' + image_url.split('/')[-1]) }}" alt="{{ breed_name }}">
+</div>
+{% endif %}
+
+</body>
+</html>
